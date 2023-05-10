@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div id="SnackBarContainer" class="Sakrij">
+            <div id="SnackBar" class="SnackOK">
+                <!--Ikona-->
+                <!--                <img src="resource/Greska.svg" alt="alt" width="25" height="25"/>-->
+                <div id="SnackIkona"></div>
+                <!--Tekst-->
+                <p id="SnackTekst">Došlo je do greške!</p>
+                <!--X-->
+                <img id="SnackZatvori" src="resource/Zatvori.svg" alt="" width="12" height="12">
+            </div>
+        </div>
+        <div id="ModalniProzorOmotac" class="Sakrij">
+            <div id="ModalniProzor" class="Sakrij">
+                <div id="Traka">
+                    <span>1, Milica Đurica</span>
+                    <img class="btnX" src="resource/005-cancel.svg" alt="alt"/>
+                </div>
+                <div id="PodaciModalniProzor">
+                    <span>ID mesta i adresa: <span>XXX</span> </span>
+                    <span>Datum rođenja: <span>07/10/1997</span> </span>
+                    <span>ID državljanstva: <span>XXX</span> </span>
+                </div>
+                <div id="TabOmotac">
+                    <div id="Tabovi">
+                        <div class="Oznaceno">Zapošljenje</div>
+                        <div>Računi(2)</div>
+                        <div>Kartice(1)</div>
+                    </div>
+                    <div id="SadrzajTabova">
+                        <div>Sadrzaj 1</div>
+                        <div class="Sakrij">Sadrzaj 2</div>
+                        <div class="Sakrij">Sadrzaj 3</div>
+                    </div>
+                </div>
+                <div id="OmotacBtnModalni">
+                    <div id="btnOK">OK</div>
+                </div>
+            </div>
+            <div id="ModalniProzorSetFiltera" class="Sakrij">
+                <div id="TrakaModalnogSetaFilt">
+                    <span>Snimanje seta filtera</span>
+                    <img class="btnX" src="resource/005-cancel.svg" alt="alt"/>
+                </div>
+                <div id="PodaciModalnogSetaFIlt">
+                    <div>
+                        <span>Ime seta kriterijuma</span>
+                        <div><input id="SetFilt" type="search"></div>
+                    </div>
+                    <div>
+                        <span>Kriterijumi:</span>
+                        <span>Ime,prezime: <span>svetozar,gavrancic</span></span>
+                        <span>Godina rođenja: <span>od 1997</span></span>
+                        <span>Dug: <span>Klijenti koji duguju iznos veci od</span></span>
+                    </div>
+                </div>
+                <div id="OmotacModalniBtnaSetFilt">
+                    <div id="btnOdustaniSetFilt">Odustani</div>
+                    <div id="btnSnimi">Snimi</div>
+                </div>
+            </div>
+            <div id="ModalniProzorRaspSetFilt" class="Sakrij">
+                <div id="TrakaModalnogRaspSetaFilt">
+                    <span>Raspoloživi setovi filtera</span>
+                    <img class="btnX" src="resource/005-cancel.svg" alt="alt"/>
+                </div>
+                <div id="TabOmotacSetFilt">
+                    <div id="TaboviSetFilt">
+                        <div class="Oznaceno">Sačuvani</div>
+                        <div>Poslednji</div>
+                    </div>
+                    <div id="SadrzajTabovaSetFilt">
+                        <div>Sadrzaj sacuvanih filt</div>
+                        <div class="Sakrij">Sadrzaj poslednjih filt</div>
+                    </div>
+                </div>
+                <div id="OmotacModalniBtnaRaspSetFilt">
+                    <div id="btnOdustani">Odustani</div>
+                </div>
+            </div>
+
+        </div>
+        <div id="ProzorPotvrdeOmotac" class="Sakrij">
+            <div id="ProzorPotvrde">
+                <div id="TrakaProzoraPotvrde">
+                    <span>Da li ste sigurni da zelite da obrisete filter Test? </span>
+                    <img class="btnX" src="resource/005-cancel.svg" alt=""/>
+                </div>
+                <div id="OmotacBtnsProzPotvrd">
+                    <div id="BtnDa">DA</div>
+                    <div id="BtnNe">NE</div>
+                </div>
+            </div>
+        </div>
+        <div id="ProzorPotvrdeOmotacFilt" class="Sakrij">
+            <div id="ProzorPotvrdeFilt">
+                <div id="TrakaProzoraPotvrdeFilt">
+                    <span>Filter sa ovim imenom vec postoji, da li zelite da sacuvate? </span>
+                    <img class="btnX" src="resource/005-cancel.svg" alt=""/>
+                </div>
+                <div id="OmotacBtnsProzPotvrdFilt">
+                    <div id="BtnDaFilt">DA</div>
+                    <div id="BtnNeFilt">NE</div>
+                </div>
+            </div>
+        </div>
+        <div id="Omotac">
+            <div id="OmotacPolja">
+                <div id="PrvaKolona">
+                    <img src="resource/018-selective.svg" width="50" height="50" alt="alt"/>
+                </div>
+                <div id="DrugaKolona">
+                    <div id="PrviRed">
+                        <div>
+                            <span>Ime,Prezime</span>
+                            <input id="ImePrez" type="search">
+                        </div>
+                        <div class="Linijice"></div>
+                        <div>
+                            <span>Brend kartice</span>
+                            <div id="PadajucaLista" class="SakrijStavke">
+                                <div id="omotacInputBrendKart">
+                                    <input id="BrendKartice" type="search">
+                                    <img src="resource/064-down-arrow.svg" alt="" width="15" height="15"/>
+                                </div>
+                                <div id="Stavke">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Linijice"></div>
+                        <div>
+                            <span>Godina rođenja</span>
+                            <div>
+                                <span>Od</span>
+                                <input id="GodOd" type="search">
+                                <span>Do</span>
+                                <input id="GodDo" type="search">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="DrugiRed">
+                        <div id="Harmonika">
+                            <div class="HarmonikaRezime">
+                                <span>   <img src="resource/043-add.svg" width="17" height="17" alt="alt"/>
+                                    Prikazi dodatne filtere</span>
+
+                            </div>
+                            <div class="HarmonikaDetalji">
+                                <div id="DugOmotac">
+                                    <span>Dug</span>
+                                    <div>
+                                        <div><div id="cbBezDuga" class="Cb"></div>Klijenti bez duga </div>
+                                        <div><div id="cbDug" class="Cb"></div>Klijenti koji duguju iznos veci od  <input id="Dug" type="search"></div>
+                                    </div>
+
+                                </div>
+                                <div id="VazenjeKart">
+                                    <span>Važenje kartice</span>
+                                    <div>
+                                        <div><div id="cbVazenjeKart" class="Cb"></div>Kartica važi jos najmanje <input id="VazKart" type="search">meseci </div>  
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="TreciRed">
+                        <div id="btnSnimiFilt" class="Sakrij"> 
+                            <img src="resource/001-diskette.svg" alt="alt" width="20" height="20"/>
+                            Snimi set filtera</div>
+                        <div id="btnPretrazi"> 
+                            <img src="resource/032-search-1.svg" alt="alt" width="20" height="20"/>
+                            Pretrazi</div>
+                        <div id="btnBrisiFilt" >
+                            <img src="resource/026-filter-9.svg" alt="alt" width="20" height="20"/>
+                            Brisi filtere</div>
+                        <div id="btnPredFilt">
+                            <img src="resource/039-list-text.svg" alt="alt" width="20" height="20"/>
+                            Predefinisani setovi filtera</div>
+                    </div>
+                </div>
+            </div>
+            <div id="OmotacRezultata">
+                <!--  <div class="Kartica">
+                     <div>
+                         <div> 
+                             <img src="resource/072- woman-icon .svg" alt="alt" width="100" height="80"/>
+                         </div>
+                         <div class="Podaci">
+                             <span>ID klijenta: 1</span>
+                             <span>Milica Đurica</span>
+                             <span>07/10/1997</span>
+                             <div><span>Status računa</span><div class="Blokiran"></div> </div>
+                         </div>
+                     </div>
+                     <div> 
+                         <span class="StanjeRac">Stanje na računu:150.000,00</span>
+                         <div class="btnDetaljnije"> 
+                             <img src="resource/034-archive.svg" alt="alt" width="20" height="20"/>
+                             Detaljnije</div>
+                     </div>
+                 </div>
+                     <div class="Kartica">
+                         <div>
+                             <div> 
+                                 <img src="resource/072- woman-icon .svg" alt="alt" width="100" height="80"/>
+                             </div>
+                             <div class="Podaci">
+                                 <span>ID klijenta: 1</span>
+                                 <span>Milica Đurica</span>
+                                 <span>07/10/1997</span>
+                             </div>
+                         </div>
+                         <div> 
+                             <span class="StanjeRac">Stanje na računu:150.000,00</span>
+                             <div class="btnDetaljnije"> 
+                                 <img src="resource/034-archive.svg" alt="alt" width="20" height="20"/>
+                                 Detaljnije</div>
+                         </div>
+                     </div>
+                     <div class="Kartica">
+                         <div>
+                             <div> 
+                                 <img src="resource/072- woman-icon .svg" alt="alt" width="100" height="80"/>
+                             </div>
+                             <div class="Podaci">
+                                 <span>ID klijenta: 1</span>
+                                 <span>Milica Đurica</span>
+                                 <span>07/10/1997</span>
+                             </div>
+                         </div>
+                         <div> 
+                             <span class="StanjeRac">Stanje na računu:150.000,00</span>
+                             <div class="btnDetaljnije"> 
+                                 <img src="resource/034-archive.svg" alt="alt" width="20" height="20"/>
+                                 Detaljnije</div>
+                         </div>
+                     </div>
+                     <div class="Kartica">
+                         <div>
+                             <div> 
+                                 <img src="resource/072- woman-icon .svg" alt="alt" width="100" height="80"/>
+                             </div>
+                             <div class="Podaci">
+                                 <span>ID klijenta: 1</span>
+                                 <span>Milica Đurica</span>
+                                 <span>07/10/1997</span>
+                             </div>
+                         </div>
+                         <div> 
+                             <span class="StanjeRac">Stanje na računu:150.000,00</span>
+                             <div class="btnDetaljnije"> 
+                                 <img src="resource/034-archive.svg" alt="alt" width="20" height="20"/>
+                                 Detaljnije</div>
+                         </div>
+                     </div>
+                     <div class="Kartica">
+                         <div>
+                             <div> 
+                                 <img src="resource/072- woman-icon .svg" alt="alt" width="100" height="80"/>
+                             </div>
+                             <div class="Podaci">
+                                 <span>ID klijenta: 1</span>
+                                 <span>Milica Đurica</span>
+                                 <span>07/10/1997</span>
+                             </div>
+                         </div>
+                         <div> 
+                             <span class="StanjeRac">Stanje na računu:150.000,00</span>
+                             <div class="btnDetaljnije"> 
+                                 <img src="resource/034-archive.svg" alt="alt" width="20" height="20"/>
+                                 Detaljnije</div>
+                         </div>
+                     </div>
+                     <div class="Kartica">
+                         <div>
+                             <div> 
+                                 <img src="resource/072- woman-icon .svg" alt="alt" width="100" height="80"/>
+                             </div>
+                             <div class="Podaci">
+                                 <span>ID klijenta: 1</span>
+                                 <span>Milica Đurica</span>
+                                 <span>07/10/1997</span>
+                             </div>
+                         </div>
+                         <div> 
+                             <span class="StanjeRac">Stanje na računu:150.000,00</span>
+                             <div class="btnDetaljnije"> 
+                                 <img src="resource/034-archive.svg" alt="alt" width="20" height="20"/>
+                                 Detaljnije</div>
+                         </div>
+                     </div>-->
+            </div>
+        </div>
+        <script src="script/klijenti.js" type="text/javascript"></script>
+        <script src="script/scriptPodesavanjaZaKomponente.js" type="text/javascript"></script>
+        <script src="script/script.js" type="text/javascript"></script>
+
+    </body>
+</html>

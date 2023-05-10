@@ -1,0 +1,704 @@
+:root{
+    --plavkastoZelena:#40b5bc;
+    --zelena:#7cad3e;
+    --crvena:#bd0d22;
+    --tamnoSiva:#676767;
+    --srednjeSiva:#bdbdbd;
+    --svetloSiva:#ebedf3;
+    --tamnoPlava:#003b6d;
+    --svetloPlava:#6699cc;
+    --nijansaIspodTamnoPlave:#034f8f;
+}
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    /* color: black;*/
+}
+body.OtvorenModalni{
+    overflow: hidden;
+}
+#Omotac{
+    max-width: 3000px;
+    margin: auto;
+}
+#OmotacPolja{
+    display: flex;
+    width: 100%;
+    background-color: var(--srednjeSiva);
+    padding: 5px;
+}
+#OmotacRezultata{
+    /*padding: 20px;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* height: 500px;*/
+    width: 100%;
+    /* background-color: #F67280;*/
+}
+#PrvaKolona{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#DrugaKolona{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+/*Podesavanja za prvi red u poljima*/
+#PrviRed{
+    display: flex;
+    justify-content: space-around;
+}
+#PrviRed > div:first-of-type{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+#PrviRed > div:first-of-type > span{
+    margin-bottom: 5px;
+}
+
+#PrviRed > div:nth-of-type(3){
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+#PrviRed > div:nth-of-type(3) > span{
+    margin-bottom: 5px;
+}
+#PrviRed > div:last-of-type{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+#PrviRed > div:last-of-type > span{
+    margin-bottom: 5px;
+}
+#PrviRed > div:last-of-type input{
+    width: 80px;
+}
+#PrviRed input{
+    width: 250px;
+    height: 20px;
+}
+#omotacInputBrendKart{
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+}
+#omotacInputBrendKart > img {
+    transition: 0.3s;
+    position: absolute;
+    margin-left: -15px;
+}
+.Linijice{
+    height: 80%;
+    width: 1px;
+    /* border: 1px solid gray;*/
+    align-self: center;
+    background-color: var(--tamnoSiva);
+}
+/*Podesavanja za drugi red u poljima*/
+#DrugiRed{
+    display: flex;
+    flex-direction: column;
+    /* height: 100px;*/
+    padding: 10px;
+    /*background-color: blue;*/
+}
+/*Podesavanje za harmoniku*/
+.HarmonikaRezime{
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 5px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.HarmonikaDetalji{
+    display: flex;
+    justify-content: space-evenly;
+    max-height: 0;
+    overflow: hidden;
+    transition: .6s;
+}
+#TreciRed{
+    display: flex;
+    /* height: 100px;*
+     background-color: antiquewhite;*/
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 5px;
+}
+#btnBrisiFilt, #btnPredFilt, #btnPretrazi, #btnSnimiFilt, .btnDetaljnije{
+    /*height: 20px;*/
+    background-color: var(--svetloPlava);
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 3px;
+    color: white;
+    border: 1px solid var(--tamnoPlava);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Postavljanje senke na dugmad da izgleda kao da upadaju u ekran*/
+#btnBrisiFilt:active, #btnPredFilt:active, #btnPretrazi:active, #btnSnimiFilt:active, .btnDetaljnije:active,
+#btnOK:active,#btnOdustani:active,#btnOdustaniSetFilt:active,#btnSnimi:active,#BtnNe:active,#BtnDa:active,#BtnDaFilt:active,#BtnNeFilt:active{
+    box-shadow: none;
+}  
+#btnBrisiFilt, #btnPredFilt, #btnPretrazi, #btnSnimiFilt, .btnDetaljnije,
+#btnOK,#btnOdustani,#btnOdustaniSetFilt,#btnSnimi,#BtnNe,#BtnDa,#BtnDaFilt,#BtnNeFilt{
+    box-shadow: 3px 2px 5px 0px #868686;
+    transition: 0.1s;
+}
+#btnBrisiFilt > img , #btnPredFilt > img , #btnPretrazi > img, #btnSnimiFilt > img, .btnDetaljnije > img{
+    margin-right: 10px;
+}
+#btnPredFilt{
+    margin-right: 10px;
+}
+#btnSnimiFilt.Sakrij + #btnPretrazi,#btnSnimiFilt{
+    margin-left: 0;
+}
+.Sakrij{
+    display: none !important; 
+}
+
+#DugOmotac > div:first-of-type > div:first-of-type{
+    display: flex;
+}
+#DugOmotac > div:first-of-type > div:last-of-type{
+    display: flex;
+}
+#DugOmotac input {
+    width: 150px; 
+    height: 20px;
+}
+#VazenjeKart > div:first-of-type,#DugOmotac > div:first-of-type{
+    border: 2px solid var(--tamnoSiva);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    padding: 10px;
+}
+#VazenjeKart > div:first-of-type > div:first-of-type{
+    display: flex;
+}
+#VazenjeKart input{
+    width: 100px; 
+    height: 20px;
+}
+/*Podesavanja za kartice*/
+.Kartica{
+    /* margin: 20px 0px 0px 20px;*/
+    margin: 20px 10px 0 10px ;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 176px;
+    padding: 10px;
+    border: 1px solid var(--tamnoSiva);
+    background-color: var(--srednjeSiva);
+}
+.Kartica > div:first-of-type > div > img {
+    background-color: var(--nijansaIspodTamnoPlave);
+    border:2px solid var(--tamnoPlava);
+    margin-right: 10px;
+}
+/*Verovatno za brisanje*/
+/*.Kartica.Blokirana {
+    background-color: #c06c86;
+}*/
+/*.Kartica.Pozitivna {
+    background-color: #F67280;
+}
+.Kartica.Negativna {
+    background-color: #325d7f;
+}*/
+/*------------*/
+.Kartica > div:first-of-type{
+    display: flex;
+}
+.Kartica > div:last-of-type{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*--------------------------------*/
+.Podaci{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.Podaci span, .StanjeRac{
+    color: black;
+}
+.Podaci > div:last-of-type{
+    display: flex;
+    align-items: center;
+}
+.Blokiran,.Pozitivan,.Negativan,.BezRacuna{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+.Blokiran{
+    background-color:var(--plavkastoZelena);
+}
+.Pozitivan {
+    background-color: var(--zelena);
+}
+.Negativan {
+    background-color: var(--crvena);
+}
+.BezRacuna{
+    background-color: var(--svetloSiva);
+}
+.btnDetaljnije{
+    margin: 10px 0 0 0;
+    background-color: var(--nijansaIspodTamnoPlave);
+    border-radius: 3px;
+}
+/*CheckBox*/
+.Cb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-basis: 15px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--svetloSiva);
+    border: 2px solid black;
+    transition: .5s;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+.Cb.Cekirano::after{
+    content: "\2713";
+    font-size: 10px;
+    color: white;
+    transform: translateY(0) scale(1) ;
+    /*transition: .5s;*/
+}
+.Cb::after{
+    content: "\2713";
+    font-size: 10px;
+    color: white;
+    transform: scale(30);
+    transition: .5s;
+}
+
+.Cb.Cekirano{
+    background-color: var(--svetloPlava);
+    border-color: #276602;
+}
+
+/*Modalni prozor za podatke o klijentu*/
+#ModalniProzorOmotac{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #a2a2a296;
+    z-index: 2;
+}
+#ModalniProzor{
+    width: 530px;
+   /* height: 370px;*/
+    background-color: white;
+}
+#Traka,#TrakaModalnogSetaFilt,#TrakaModalnogRaspSetaFilt,#TrakaProzoraPotvrde,#TrakaProzoraPotvrdeFilt{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 5px;
+    align-items: center;
+    border: 1px solid var(--tamnoPlava);
+    background-color: var(--nijansaIspodTamnoPlave);
+}
+#PodaciModalniProzor,#PodaciModalnogSetaFIlt,#SadrzajTabovaSetFilt > div{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 10px 10px;
+}
+#PodaciModalniProzor > span{
+    margin-top: 10px;
+}
+#PodaciModalniProzor > span > span{
+    color: gray;
+    margin-left: 10px;
+}
+
+/*Tabovi u modalnom*/
+#TabOmotac,#TabOmotacSetFilt{
+    width: 100%;
+    padding: 10px;
+}
+#Tabovi,#TaboviSetFilt{
+    display: flex;
+}
+#Tabovi > div,#TaboviSetFilt > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    border-bottom: 0;
+    padding: 5px;
+    margin-left: 3px;
+    min-width: 110px;
+}
+#Tabovi > div.Oznaceno , #TaboviSetFilt > div.Oznaceno{
+    border: 1px solid black;
+    border-bottom: 0;
+    font-weight: bold;
+}
+
+#Tabovi > div:first-of-type,#TaboviSetFilt > div:first-of-type{
+    margin: 0;
+}
+#SadrzajTabova,#SadrzajTabovaSetFilt > div{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid black;
+    height: 150px;
+    overflow: scroll;
+}
+#SadrzajTabova > div,#SadrzajTabovaSetFilt > div > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#SadrzajTabova > div > span span{
+    color: gray;
+}
+.Centrirano{
+    align-self: center;
+    margin-bottom: 5px;
+}
+#OmotacBtnModalni,#OmotacModalniBtnaSetFilt,#OmotacModalniBtnaRaspSetFilt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+#btnOK,#btnOdustani,#btnOdustaniSetFilt,#btnSnimi,#BtnNe,#BtnDa,#BtnDaFilt,#BtnNeFilt{
+    background-color: var(--svetloPlava);
+    padding: 5px;
+    width: 100px;
+    border-radius: 3px;
+    color: white;
+    border: 1px solid var(--nijansaIspodTamnoPlave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Modalni prozor za set filtera*/
+#ModalniProzorSetFiltera,#ModalniProzorRaspSetFilt{
+    width: 450px;
+    /* min-height: 215px;*/
+    background-color: white;
+}
+#PodaciModalnogSetaFIlt{
+    padding: 10px;
+}
+#PodaciModalnogSetaFIlt > div:first-of-type{
+    display: flex;
+}
+#PodaciModalnogSetaFIlt input{
+    width: 170px;
+    margin-left: 5px;
+    height: 20px;
+}
+#PodaciModalnogSetaFIlt > div:last-of-type{
+    display: flex;
+    flex-direction: column; 
+}
+#PodaciModalnogSetaFIlt > div:last-of-type > span:first-of-type{
+    font-weight: bold;
+    margin-top:10px;
+    align-self: center;
+}
+#PodaciModalnogSetaFIlt > div:last-of-type > span{
+    margin-top: 10px;
+}
+#PodaciModalnogSetaFIlt > div:last-of-type > span span{
+    color: grey;
+}
+#btnSnimi,#BtnNe,#BtnNeFilt{
+    margin-left: 10px;
+}
+.btnX{
+    width: 12px;
+    height: 12px;
+}
+#SadrzajTabovaSetFilt > div > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+#SadrzajTabovaSetFilt > div > div >div:last-of-type{
+    display: flex;
+}
+.Primeni,.Obrisi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Primeni div,.Obrisi div{
+    margin-right: 3px;
+    width: 13px;
+    height: 13px;
+    background-image: url(../resource/010-tick.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.Obrisi{
+    margin-left: 10px;
+}
+.Obrisi div{
+    width: 10px;
+    height: 10px;
+    background-image: url(../resource/005-cancel.svg);
+}
+/*Padajuca lista*/
+#PadajucaLista{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    /*background-color: green;*/
+    height: 20px;
+}
+#PadajucaLista:not(.SakrijStavke) > #omotacInputBrendKart > img{
+    transform: rotate(180deg);
+}
+.SakrijStavke {
+    overflow: hidden !important;
+}
+#Stavke {
+    border: 2px solid black;
+    background-color: white;
+    border-top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+#Stavke span {
+    color: black;
+    width: 100%;
+    padding: 2px;
+    background-color: white;
+    border-bottom: 1px solid black;
+    /* margin: 2px 0;*/
+}
+#Stavke span:last-of-type{
+    border-bottom: 0;
+    /* margin: 2px 0 0 0;*/
+}
+/*Stavke span:first-of-type{
+    margin: 0 0 2px 0;
+}*/
+#Stavke:empty{
+    border: 0;
+}
+#Stavke span:hover {
+    color: white;
+    background-color: var(--svetloPlava);
+}
+#Stavke span:active {
+    color: white;
+    background-color: var(--nijansaIspodTamnoPlave);
+}
+/*Snack bar*/
+#SnackBarContainer {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    pointer-events: none;
+    padding: 5px;
+    bottom: 0;
+    justify-content: center;
+    z-index: 3;
+}
+#SnackBar {
+    min-width: 250px;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2px 10px;
+    background-color: var(--crvena);
+}
+#SnackIkona{
+    width: 25px;
+    height: 25px;
+    flex-basis: 25px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-image: url("../resource//Greska.svg");
+}
+#SnackBar p {
+    margin: 0;
+    padding: 10px;
+    flex: 1;
+    color: white;
+}
+.SnackOK {
+    background-color: var(--zelena) !important;
+}
+#SnackBar.SnackOK p {
+    color: black;
+}
+#SnackBar.SnackOK #SnackIkona {
+    background-image: url("../resource//OK.svg") !important;
+}
+/*Klasa greska ukoliko dodje do pogresnog unosa*/
+.Greska{
+    border: 1px solid var(--crvena);
+}
+/*Prozor potvrde*/
+#ProzorPotvrdeOmotac,#ProzorPotvrdeOmotacFilt{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    align-items: center;
+    justify-content: center;
+    background-color: #a2a2a296;
+    z-index: 3;
+}
+#ProzorPotvrde,#ProzorPotvrdeFilt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 460px;
+    /*height: 200px;*/
+    background-color:white;
+}
+#OmotacBtnsProzPotvrd,#OmotacBtnsProzPotvrdFilt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:10px 0;
+}
+/*Responzivnost*/
+@media screen and (max-width: 1060px){
+    #PrviRed input {
+        width: 180px;
+    }
+    #PrviRed > div:last-of-type input {
+        width: 60px;
+    }
+    .HarmonikaDetalji {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #VazenjeKart{
+        margin-top: 10px;
+    }
+    #PadajucaLista {
+
+        width: 180px;
+    }
+    #btnBrisiFilt, #btnPredFilt, #btnPretrazi, #btnSnimiFilt, .btnDetaljnije {
+        padding: 3px;
+        margin-left: 5px;
+        border-radius: 3px;
+
+    }
+}
+@media screen and (max-width:700px){
+    #PrviRed {
+        flex-direction: column;
+        align-items: center;
+    }
+    #PrviRed > div:first-of-type,#PrviRed > div:nth-of-type(3),#PrviRed > div:last-of-type {
+        width: 100%;
+    }
+    #PrviRed input,#PadajucaLista{
+        width: 100%;
+    }
+    #PrviRed > div:last-of-type > div:last-of-type{
+        display: flex;
+        flex-direction: column;
+    }
+    #PrviRed > div:last-of-type > div:last-of-type > span{
+        align-self: center;
+    }
+    #PrviRed > div:last-of-type input{
+        width: 100%;
+    }
+    #PrviRed > div:first-of-type > span,#PrviRed > div:nth-of-type(3) > span,#PrviRed > div:last-of-type > span {
+        align-self: center;
+    }
+
+    #TreciRed {
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column
+    }
+    #btnPredFilt {
+        margin: 0;
+    }
+    #btnBrisiFilt, #btnPredFilt, #btnPretrazi, #btnSnimiFilt, .btnDetaljnije {
+        width: 80%;
+        margin: 5px 0 0 0;
+    }
+    .HarmonikaRezime {
+        margin: 10px 0;
+        justify-content: center;
+    }
+    .Linijice{
+        display: none;
+    }
+    #PrvaKolona{
+        display: none;
+    }
+    .Kartica{
+        width: 100%;
+    }
+    #VazenjeKart > div:first-of-type, #DugOmotac > div:first-of-type{
+        width: 100%;
+    }
+    #DugOmotac input,#VazKart input{
+        width: 100px;
+    }
+    #DugOmotac > div:first-of-type > div:last-of-type,#VazenjeKart > div:first-of-type > div:first-of-type{
+        flex-wrap: wrap;
+    }
+
+    #ProzorPotvrde, #ProzorPotvrdeFilt{
+        width: 98%;
+        min-width: 0;
+    }
+    #ModalniProzor,#ModalniProzorSetFiltera, #ModalniProzorRaspSetFilt{
+        width: 98%;
+    }
+    #Tabovi > div, #TaboviSetFilt > div{
+        margin-left: 1px;
+    }
+
+}
